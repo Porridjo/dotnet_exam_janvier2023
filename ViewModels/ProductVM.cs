@@ -77,11 +77,11 @@ namespace ExamJanvier2023.ViewModels
 
         private void AbandonProduct()
         {
-            var product = dc.Products.FirstOrDefault(p => p.ProductId == SelectedProduct.ProductId);
+            var product = dc.Products.SingleOrDefault(p => p.ProductId == SelectedProduct.ProductId);
             if (product != null)
             {
-                product.Discontinued = true;
-                ProductsList.Remove(SelectedProduct);
+
+                SelectedProduct.Discontinued = true;
                 dc.SaveChanges();
                 MessageBox.Show("Enregistrement en base de données fait");
             }
