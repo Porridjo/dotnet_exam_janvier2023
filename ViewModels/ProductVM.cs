@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfApplication1.ViewModels;
 
 namespace ExamJanvier2023.ViewModels
@@ -82,14 +83,9 @@ namespace ExamJanvier2023.ViewModels
                 product.Discontinued = true;
                 ProductsList.Remove(SelectedProduct);
                 dc.SaveChanges();
-                loadProducts();
+                MessageBox.Show("Enregistrement en base de données fait");
             }
-            /*
-            if (SelectedProduct != null)
-            {
-                ProductsList.Remove(SelectedProduct);
-            }
-            */
+         
         }
     }
 }
